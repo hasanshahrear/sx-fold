@@ -1,0 +1,118 @@
+{
+  "name": "sx-fold",
+  "displayName": "SX Fold",
+  "description": "Fold, preview, and manage React/MUI sx props with ease. Declutter your JSX by collapsing sx objects.",
+  "version": "1.0.0",
+  "publisher": "hasanshahrear",
+  "author": {
+    "name": "Hasan Shahrear"
+  },
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1976d2",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasanshahrear/sx-fold"
+  },
+  "bugs": {
+    "url": "https://github.com/hasanshahrear/sx-fold/issues"
+  },
+  "homepage": "https://github.com/hasanshahrear/sx-fold#readme",
+  "keywords": [
+    "react",
+    "mui",
+    "material-ui",
+    "sx",
+    "fold",
+    "folding",
+    "collapse",
+    "jsx",
+    "tsx",
+    "styling",
+    "code-folding"
+  ],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sx-fold.toggleFold",
+        "title": "SX Fold: Toggle Fold"
+      },
+      {
+        "command": "sx-fold.foldAllSx",
+        "title": "SX Fold: Fold All SX"
+      },
+      {
+        "command": "sx-fold.unfoldAllSx",
+        "title": "SX Fold: Unfold All SX"
+      },
+      {
+        "command": "sx-fold.showHomePage",
+        "title": "SX Fold: Show Home Page"
+      },
+      {
+        "command": "sx-fold.toggleAllSx",
+        "title": "SX Fold: Toggle All SX"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "sx-fold.toggleFold",
+        "key": "ctrl+shift+x",
+        "mac": "cmd+shift+x",
+        "when": "editorTextFocus && (editorLangId == javascript || editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascriptreact)"
+      },
+      {
+        "command": "sx-fold.foldAllSx",
+        "key": "ctrl+k ctrl+s",
+        "mac": "cmd+k cmd+s",
+        "when": "editorTextFocus && (editorLangId == javascript || editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascriptreact)"
+      },
+      {
+        "command": "sx-fold.unfoldAllSx",
+        "key": "ctrl+k ctrl+u",
+        "mac": "cmd+k cmd+u",
+        "when": "editorTextFocus && (editorLangId == javascript || editorLangId == typescript || editorLangId == typescriptreact || editorLangId == javascriptreact)"
+      }
+    ],
+    "configuration": {
+      "title": "SX Fold",
+      "properties": {
+        "sxFold.ignoreCommentedSx": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ignore sx inside comments (// sx or /* sx */). When enabled, commented sx blocks will not be folded."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.0.0"
+  }
+}
