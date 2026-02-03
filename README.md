@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/icon.svg" alt="SX Fold Logo" width="128" height="128">
+  <img src="images/icon.png" alt="SX Fold Logo" width="128" height="128">
 </p>
 
 <h1 align="center">SX Fold</h1>
